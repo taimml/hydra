@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import QueryClientProviderContext from "./query-client-provider";
 
 const MontserratSans = Montserrat({
   variable: "--font-monteserrat-sans",
@@ -25,7 +26,7 @@ export default function RootLayout({
       <body className={`${MontserratSans.className} antialiased`}>
         <Header/>
         <main className="container mx-auto lg:px-24 px-4">
-          {children}
+          <QueryClientProviderContext>{children}</QueryClientProviderContext>
         </main>
         <Footer />
       </body>

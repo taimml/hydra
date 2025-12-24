@@ -2,24 +2,32 @@
 import { useState } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, } from "@/components/ui/carousel";
 import { ArrowDown } from "../icons/ArrowDown";
+import Image from "next/image";
+
+import women from "@/public/women.svg";
+import womenmob from "@/public/womenmob.svg";
+import hydraTech1 from "@/public/Hydra-Tech1 1.svg";
+import hydraTech2 from "@/public/Hydra-Tech2 1.svg";
+import hydraTech3 from "@/public/Hydra-Tech3 1.svg";
+import hydraTech4 from "@/public/Hydra-Tech4 1.svg";
 
 export default function TechnologiesHardwareMain() {
     const mobileCarouselItems = [
         {
             id:1,
-            pic:"Hydra-Tech1 1.svg",
+            pic:hydraTech1,
         },
         {
             id:2,
-            pic:"Hydra-Tech3 1.svg",
+            pic:hydraTech3,
         },
         {
             id:3,
-            pic:"Hydra-Tech2 1.svg",
+            pic:hydraTech2,
         },
         {
             id:4,
-            pic:"Hydra-Tech4 1.svg",
+            pic:hydraTech4,
         },
         
     ]
@@ -27,8 +35,8 @@ export default function TechnologiesHardwareMain() {
         <div className="">
             <div className="relative lg:mb-10">
                 <div className="" >
-                    <img src="women.svg" alt="women" className="hidden lg:block"/>
-                    <img src="womenmob.svg" alt="women" className="lg:hidden w-screen " />
+                    <Image src={women} alt="women" className="hidden lg:block"/>
+                    <Image src={womenmob} alt="women" className="lg:hidden w-screen " />
                     <div className="absolute inset-0 lg:text-4xl text-center flex flex-col items-center justify-center">
                         <p className="font-bold">TECHNOLOGIES & HARDWARE</p>
                         <p className="font-light text-2xl">USED BY HYDRA VR.</p>
@@ -39,10 +47,10 @@ export default function TechnologiesHardwareMain() {
                 </div>
             </div>   
             <div className="hidden lg:flex justify-between">
-                <img src="Hydra-Tech1 1.svg" alt="1" />
-                <img src="Hydra-Tech3 1.svg" alt="3" />
-                <img src="Hydra-Tech2 1.svg" alt="2" />
-                <img src="Hydra-Tech4 1.svg" alt="4" />
+                <Image src={hydraTech1} alt="1" />
+                <Image src={hydraTech3} alt="3" />
+                <Image src={hydraTech2} alt="2" />
+                <Image src={hydraTech4} alt="4" />
             </div>
             <div className="lg:hidden">
                 <Carousel>
@@ -51,7 +59,7 @@ export default function TechnologiesHardwareMain() {
                             <CarouselItem key={item.id}>
                                 <div>
                                     <div className="flex justify-center items-center">
-                                        <img src={item.pic} className="w-60" />
+                                        <Image src={item.pic} alt="" className="w-60" />
                                     </div>
                                 </div>
                             </CarouselItem>    

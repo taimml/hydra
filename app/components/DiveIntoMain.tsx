@@ -5,22 +5,32 @@ import { ArrowRight } from "../icons/ArrowRight";
 import { Locate } from "../icons/Locate";
 import { Call } from "../icons/Call";
 import { Mail } from "../icons/mail";
+import Image from "next/image";
+
+import linii2 from "@/public/linii2.svg";
+import linii1 from "@/public/linii1.svg";
+import frame10 from "@/public/Frame 10.svg";
+import moblin from "@/public/moblin.svg";
+import bigmob from "@/public/bigmob.svg";
+import locationIcon from "@/public/Location-Icon.svg";
+import phoneCall from "@/public/phone-call.svg";
+import mailIcon from "@/public/mail.svg";
 
 export default function DiveIntoMain() {
     const mobileCarouselItems = [
         {
             id:1,
-            pic: "Location-Icon.svg",
+            pic: locationIcon,
             text:"Union St, Seattle, WA 98101, United States",
         },
         {
             id:2,
-            pic:"phone-call.svg",
+            pic: phoneCall,
             text:"(110) 1111-1010",
         },
         {
             id:3,
-            pic:"mail.svg",
+            pic: mailIcon,
             text:"Contact@HydraVTech.com",
         }
     ];
@@ -28,10 +38,10 @@ export default function DiveIntoMain() {
         <div>
             <div className="relative hidden lg:block">
                 <div className="absolute lg:-left-30 top-55 -translate-y-1/2 -z-10">
-                    <img src="linii2.svg" alt="2" />
+                    <Image src={linii2} alt="2" />
                 </div>
                 <div className="absolute -right-20 -top-60 -z-10">
-                    <img src="linii1.svg" alt="1" />
+                    <Image src={linii1} alt="1" />
                 </div>
                 <div className="flex justify-between mb-22">
                     <div className="hidden lg:flex flex-col gap-10">
@@ -51,7 +61,7 @@ export default function DiveIntoMain() {
                         
                     </div>
                     <div>
-                        <img src="Frame 10.svg" alt="frame" />
+                        <Image src={frame10} alt="frame" />
                     </div>
                 </div>
                 <div className="flex justify-between bg-radial from-[#3A3456] to-[#211E2E] rounded-[100px] px-16 py-10">
@@ -82,9 +92,9 @@ export default function DiveIntoMain() {
             </div>    
             <div className="relative items-center lg:hidden flex flex-col -mt-10">
                 <div className="absolute -z-10 -translate-y-1/5">
-                    <img src="moblin.svg" alt="mob" />
+                    <Image src={moblin} alt="mob" />
                 </div>
-                <img src="bigmob.svg" alt="big" className="w-screen" />
+                <Image src={bigmob} alt="big" className="w-screen" />
                 <div className="flex flex-col">
                     <div className="flex flex-col font-bold my-10 gap-4 text-center">
                             <h1 className="text-2xl"><span className="text-4xl bg-linear-to-r from-[#C0B7E8] to-[#8176AF] bg-clip-text text-transparent">Dive</span> Into The Depths</h1>
@@ -99,7 +109,7 @@ export default function DiveIntoMain() {
                                 <CarouselItem key={item.id}>
                                     <div className="bg-radial from-[#3A3456] to-[#211E2E] rounded-[100px] p-8 flex items-center gap-4">
                                         <div>
-                                            <img src={item.pic} className=""/>
+                                            <Image src={item.pic} alt="" className=""/>
                                         </div>
         
                                         <div>

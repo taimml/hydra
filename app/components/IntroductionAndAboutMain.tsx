@@ -1,15 +1,20 @@
+import Image from "next/image";
+import linii3 from "@/public/linii3.svg";
+import component1 from "@/public/Component 1.svg";
+import maskGroup from "@/public/Mask group.svg";
+
 export default function IntroductionAndAboutMain() {
     return(
         <div className="relative">
             <div className="absolute -z-10 top-65">
-                <img src="linii3.svg" alt="3" />
+                <Image src={linii3} alt="3" />
             </div>
             <div className="flex justify-between">
                 <div className="hidden lg:block">
                     <h1 className="text-4xl font-bold">INTRODUCTION</h1>
                     <div className="flex items-center gap-7">
                         <p className="text-4xl font-light">TO HYDRA VR</p>
-                        <img src="Component 1.svg" alt="comp" />
+                        <Image src={component1} alt="comp" />
                     </div>
                 </div>
                     <p className="max-w-xl hidden lg:block">Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat 
@@ -22,7 +27,7 @@ export default function IntroductionAndAboutMain() {
                     <p className="font-bold">INTRODUCTION</p>
                     <p className="font-light">TO HYDRA VR</p>
                 </div>
-                <img src="Mask group.svg" alt="mask" />
+                <Image src={maskGroup} alt="mask" />
                 <div className="flex flex-col gap-9">
                     <div className="text-4xl hidden lg:block">
                         <p className="font-bold">ABOUT</p>

@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1766490842416,
+      "tag": "0000_ambitious_sprite",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1766589860165,
+      "tag": "0001_minor_stepford_cuckoos",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1766589952234,
+      "tag": "0002_fine_nuke",
+      "breakpoints": true
+    }
+  ]
+}

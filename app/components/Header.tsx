@@ -1,18 +1,21 @@
 'use client';
 
+import Image from "next/image";
 import { useState } from "react";
+import logo1 from "@/public/logo1.svg"
+import { Hamburger } from "../icons/Hamburger";
 
 export default function Header() {
     const [isMobileOpen, setIsMobileOpen] = useState(false);
 
     return (
         <header className="flex justify-between items-center font-bold lg:px-24 px-4 mt-4">
-            <img src="logo1.svg" alt="logo" className=""/>
+            <Image src={logo1} alt="logo"/>
             <button 
                 className="lg:hidden"
                 onClick={() => setIsMobileOpen(true)}
             >
-                <img src="Hamburger-Button.svg" alt="menu" className="h-8" />
+                <Hamburger/>
             </button>
             <div className="gap-8 hidden lg:flex">
                 <a href="#">ABOUT</a>

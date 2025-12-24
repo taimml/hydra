@@ -2,28 +2,35 @@
 import { useState } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, } from "@/components/ui/carousel";
 import { SmallArrowRight } from "../icons/SmallArrowRight";
+import Image from "next/image";
 
+import linii5 from "@/public/linii5.svg";
+import component1 from "@/public/Component 1.svg";
+import frame58 from "@/public/Frame 58.svg";
+import frame60 from "@/public/Frame 60.svg";
+import frame62 from "@/public/Frame 62.svg";
+import frame64 from "@/public/Frame 64.svg";
 
 export default function HowWeBuildMain() {
     const mobileCarouselItems = [
         {
             id:1,
-            pic: "Frame 58.svg",
+            pic: frame58,
             text: "3D Conception & Design",
         },
         {
             id:2,
-            pic: "Frame 60.svg",
+            pic: frame60,
             text: "Interaction Design",
         },
         {
             id:3,
-            pic: "Frame 62.svg",
+            pic: frame62,
             text: "VR World User Testing",
         },
         {
             id:4,
-            pic: "Frame 64.svg",
+            pic: frame64,
             text: "Hydra VR Deploy",
         },
     ]
@@ -31,14 +38,14 @@ export default function HowWeBuildMain() {
         <div>
             <div className="relative hidden lg:block">
                 <div className="absolute -z-10 top-55 ">
-                    <img src="linii5.svg" alt="" />
+                    <Image src={linii5} alt="" />
                 </div>
                 <div className="flex justify-between mb-24">
                     <div>
                         <h1 className="text-4xl font-bold">HOW WE BUILD</h1>
                         <div className="flex items-center gap-7">
                             <p className="text-4xl font-light">WITH HYDRA VR?</p>
-                            <img src="Component 1.svg" alt="comp" />
+                            <Image src={component1} alt="comp" />
                         </div>
                     </div>
                         <p className="max-w-xl">Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat 
@@ -48,28 +55,28 @@ export default function HowWeBuildMain() {
                 </div>
                 <div className="grid grid-cols-4">
                     <div className="flex flex-col items-center gap-4">
-                        <img src="Frame 58.svg" alt="58" />
+                        <Image src={frame58} alt="58" />
                         <div className="flex gap-4 items-center">
                             <SmallArrowRight/>
                             <p className="text-2xl font-bold max-w-50">3D Conception & Design</p>
                         </div>
                     </div>
                     <div className="flex flex-col items-center gap-4">
-                        <img src="Frame 60.svg" alt="60" />
+                        <Image src={frame60} alt="60" />
                         <div className="flex gap-4 items-center">
                             <SmallArrowRight/>
                             <p className="text-2xl font-bold max-w-50">Interaction Design</p>
                         </div>
                     </div>
                     <div className="flex flex-col items-center gap-4">
-                        <img src="Frame 62.svg" alt="62" />
+                        <Image src={frame62} alt="62" />
                         <div className="flex gap-4 items-center">
                             <SmallArrowRight/>
                             <p className="text-2xl font-bold max-w-40">VR World User Testing</p>
                         </div>
                     </div>
                     <div className="flex flex-col items-center gap-4">
-                        <img src="Frame 64.svg" alt="64" />
+                        <Image src={frame64} alt="64" />
                         <div className="flex gap-4 items-center">
                             <SmallArrowRight/>
                             <p className="text-2xl font-bold max-w-50">Hydra VR Deploy</p>
@@ -88,7 +95,7 @@ export default function HowWeBuildMain() {
                             {mobileCarouselItems.map((item) => (
                                 <CarouselItem key={item.id}>
                                     <div className="flex flex-col gap-8 items-center text-center">
-                                        <img src={item.pic} />
+                                        <Image src={item.pic} alt="" />
                                         <p className="text-2xl font-bold max-w-50">{item.text}</p>
                                     </div>
                                 </CarouselItem>
