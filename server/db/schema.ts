@@ -41,7 +41,7 @@ export const formStatusEnum = pgEnum("form_status", [
 export const forms = pgTable("forms", {
     ...commonFields,
     firstName: varchar("first_name", { length: 100 }).notNull(),
-    // lastName: varchar("last_name", { length: 100 }).notNull(),
+    lastName: varchar("last_name", { length: 100 }).notNull(),
     email: varchar("email", { length: 100 }).notNull(),
     phone: varchar("phone", { length: 20 }).notNull(),
     subject: varchar("subject", { length: 200 }),
