@@ -1,4 +1,5 @@
 import DiveIntoMain from "./components/DiveIntoMain";
+import Footer from "./components/Footer";
 import HowWeBuildMain from "./components/HowWeBuildMain";
 import IntroductionAndAboutMain from "./components/IntroductionAndAboutMain";
 import JoinHydraMain from "./components/JoinHydraMain";
@@ -14,6 +15,7 @@ export default function Home() {
       <TechnologiesHardwareMain/>
       <HowWeBuildMain/>
       <JoinHydraMain/>
+      <Footer/>
     </main>
   );
 }

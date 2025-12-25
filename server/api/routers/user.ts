@@ -1,9 +1,7 @@
 import  { Context, Elysia } from "elysia";
 import { auth } from "../../auth/auth";
 
-import { db } from "../../db";
-import { eq } from "drizzle-orm";
-import { user } from "../../db/auth-schema";
+
 import { userMiddleWare } from "../middleware/auth";
 
 export const userService = new Elysia({

@@ -1,10 +1,9 @@
 'use client'
 import { useState } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, } from "@/components/ui/carousel";
-import { ArrowRight } from "../icons/ArrowRight";
-import { Locate } from "../icons/Locate";
-import { Call } from "../icons/Call";
-import { Mail } from "../icons/mail";
+import { ArrowRight } from "@/components/icons/ArrowRight";
+import { Call } from "@/components/icons/Call";
+import { Mail } from "@/components/icons/mail";
 import Image from "next/image";
 
 import linii2 from "@/public/linii2.svg";
@@ -15,6 +14,7 @@ import bigmob from "@/public/bigmob.svg";
 import locationIcon from "@/public/Location-Icon.svg";
 import phoneCall from "@/public/phone-call.svg";
 import mailIcon from "@/public/mail.svg";
+import { Locate } from "@/components/icons/Locate";
 
 export default function DiveIntoMain() {
     const mobileCarouselItems = [

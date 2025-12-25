@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import logo1 from "@/public/logo1.svg"
-import { Hamburger } from "../icons/Hamburger";
+import { Hamburger } from "@/components/icons/Hamburger";
 
 export default function Header() {
     const [isMobileOpen, setIsMobileOpen] = useState(false);

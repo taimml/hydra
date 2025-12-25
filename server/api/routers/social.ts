@@ -3,44 +3,28 @@ import { eq } from "drizzle-orm";
 import { socialLinks } from "@/server/db/schema";
 import { db } from "@/server/db";
 import { userService } from "@/server/api/routers/user";
+import { z } from "zod/v4";
 
 
-export const socialPublicRouter = new Elysia({ prefix: "/social" })
+export const socialRouter = new Elysia({ prefix: "/social" })
     .get("/", async () => {
         const socials = await db.query.socialLinks.findMany();
         return { success: true, data: socials };
-    });
-
-
-
-
-export const socialAdminRouter = new Elysia({ prefix: "/admin/social" })
-    .use(userService)
-    .get("/", async () => {
-        const socials = await db.query.socialLinks.findMany();
-        return { success: true, data: socials };
-    }, {
-        hasRole: "admin"
     })
+    .use(userService)
     .put("/:id", async ({ params, body }) => {
         const { id } = params;
-        const { name, url, icon } = body as any;
-        
+        const { url } = body;
         const [updatedSocial] = await db
-        .update(socialLinks)
-        .set({ 
-            name, 
-            url, 
-            icon
-        })
-        .where(eq(socialLinks.id, id))
-        .returning();
-        
+            .update(socialLinks)
+            .set({ url })
+            .where(eq(socialLinks.id, id))
+            .returning();
         return { success: true, data: updatedSocial };
     }, {
+        params: z.object({ id: z.string() }),
+        body: z.object({ 
+            url: z.string()
+        }),
         hasRole: "admin"
     });
-
-export const socialRouter = new Elysia()
-    .use(socialPublicRouter)
-    .use(socialAdminRouter);

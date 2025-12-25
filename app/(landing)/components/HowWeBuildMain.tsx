@@ -1,7 +1,7 @@
 'use client'
 import { useState } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, } from "@/components/ui/carousel";
-import { SmallArrowRight } from "../icons/SmallArrowRight";
+import { SmallArrowRight } from "@/components/icons/SmallArrowRight";
 import Image from "next/image";
 
 import linii5 from "@/public/linii5.svg";

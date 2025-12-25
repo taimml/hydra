@@ -60,11 +60,11 @@ export default function JoinHydraMain() {
     return (
     <div className="bg-radial from-[#403A5F] to-[#211E2E] lg:rounded-[100px] rounded-4xl p-12 shadow-2xl">
         <div className="flex flex-col text-center mb-10 items-center">
-        <h2 className="lg:text-[36px] text-2xl font-bold text-white">JOIN HYDRA</h2>
-        <Image src={vector16} alt="16" className="my-6" />
-        <p className="lg:text-[36px] text-2xl font-light text-white hidden lg:block">Let's Build Your VR Experience</p>
-        <p className="lg:text-[36px] text-2xl font-light text-white lg:hidden">Let's Build</p>
-        <p className="lg:text-[36px] text-2xl font-light text-white lg:hidden">Your VR Experience</p>
+            <h2 className="lg:text-[36px] text-2xl font-bold text-white">JOIN HYDRA</h2>
+            <Image src={vector16} alt="16" className="my-6" />
+            <p className="lg:text-[36px] text-2xl font-light text-white hidden lg:block">Let's Build Your VR Experience</p>
+            <p className="lg:text-[36px] text-2xl font-light text-white lg:hidden">Let's Build Your VR Experience</p>
+            <p className="lg:text-[36px] text-2xl font-light text-white lg:hidden"></p>
         </div>
 
         <ShadcnForm {...form}>

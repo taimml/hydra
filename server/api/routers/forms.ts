@@ -5,19 +5,14 @@ import { db } from "../../db";
 import { forms } from "../../db/schema";
 import { formSchema } from "@/lib/shared/schemas/forms";
 
-export const formsPublicRouter = new Elysia({ prefix: "/forms" })
+export const formsRouter = new Elysia({ prefix: "/forms" })
     .get("/", () => "Forms API is working!")
     .post("/", async ({ body }) => {
-        await db
-            .insert(forms)
-            .values(body)
+        await db.insert(forms).values(body);
     }, {
         body: formSchema
-    });
+    })
 
-
-
-export const formsAdminRouter = new Elysia({ prefix: "/forms" })
     .use(userService)
     .get("/", async () => {
         try {
@@ -51,7 +46,3 @@ export const formsAdminRouter = new Elysia({ prefix: "/forms" })
     }, {
         hasRole: "admin"
     });
-
-export const formsRouter = new Elysia()
-    .use(formsPublicRouter)
-    .use(formsAdminRouter);

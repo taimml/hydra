@@ -17,5 +17,17 @@ export const auth = betterAuth({
                 defaultValue: "user"
             }
         }
+    },
+    databaseHooks: {
+        user: {
+            create: {
+                before: (user) => new Promise((resolve) => resolve({
+                    data: {
+                        ...user,
+                        role: (user.email === process.env.MAIN_ADMIN_EMAIL ? 'admin' : 'user')
+                    }
+                }))
+            }
+        }
     }
 })
