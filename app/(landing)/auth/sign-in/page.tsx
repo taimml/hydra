@@ -7,11 +7,12 @@ import { authClient } from "@/lib/client/auth-client";
 import Image from "next/image";
 import vector16 from "@/public/Vector 16.svg";
 import { Form as ShadcnForm, FormField, FormItem, FormLabel, FormControl, FormMessage} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
+import { Input } from "@/components/ui/input";
 
 export default function SignIn() {
+	const router = useRouter()
 	const formSchema = z.object({
 		email: z.email("Некоректная почта"),
 		password: z.string().min(1, "Введите пароль"),
@@ -33,12 +34,13 @@ export default function SignIn() {
 			{
 				onSuccess: () => {
 					alert("Sign in successful");
+					router.push("/");
 				},
 			},
 		);
 	};
 	return(
-		<div className="bg-radial from-[#403A5F] to-[#211E2E] lg:rounded-[100px] rounded-4xl p-12 shadow-2xl">
+		<div className="bg-radial from-[#403A5F] to-[#211E2E] lg:rounded-[100px] rounded-4xl p-12">
 			<div className="flex flex-col text-center mb-10 items-center">
 				<h2 className="lg:text-[36px] text-2xl font-bold text-white">SIGN IN</h2>
 				<Image src={vector16} alt="16" className="my-6" />
@@ -54,11 +56,11 @@ export default function SignIn() {
 						render={({ field }) => (
 						<FormItem>
 							<FormControl>
-							<input
+							<Input
 								type="email"
 								{...field}
 								placeholder="Email"
-								className="w-full border-2 border-white rounded-[40px] px-8 py-5 text-white placeholder-white bg-transparent"
+								className="w-full border-2 border-white rounded-[40px] px-8 py-5 text-white placeholder-white"
 							/>
 							</FormControl>
 							<FormMessage />
@@ -75,7 +77,7 @@ export default function SignIn() {
 								type="password"
 								{...field}
 								placeholder="Password"
-								className="w-full border-2 border-white rounded-[40px] px-8 py-5 text-white placeholder-white bg-transparent"
+								className="w-full border-2 border-white rounded-[40px] px-8 py-5 text-white placeholder-white"
 							/>
 							</FormControl>
 							<FormMessage />
@@ -85,7 +87,7 @@ export default function SignIn() {
 					<div className="flex justify-center">
 						<Button 
 							type="submit"  
-							className="text-sm text-mypurple font-extrabold bg-linear-to-r from-[#8176AF] to-[#C0B7E8] w-full max-w-3xs py-6 rounded-4xl cursor-pointer"
+							className="text-sm text-mypurple font-bold bg-linear-to-r from-[#8176AF] to-[#C0B7E8] w-full max-w-3xs py-6 rounded-4xl cursor-pointer"
 						>
 							SIGN IN
 						</Button>

@@ -26,7 +26,7 @@ export const socialLinks = pgTable("social_links", {
     ...commonFields,
     name: varchar("name", { length: 30 }).notNull(),
     url: text("url").notNull(),
-    icon: varchar("icon", { length: 30 }).notNull(),
+    icon: varchar("icon", { length: 50 }),
 });
 
 

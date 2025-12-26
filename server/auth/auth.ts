@@ -24,7 +24,7 @@ export const auth = betterAuth({
                 before: (user) => new Promise((resolve) => resolve({
                     data: {
                         ...user,
-                        role: (user.email === process.env.MAIN_ADMIN_EMAIL ? 'admin' : 'user')
+                        role: (user.email === process.env.BETTER_AUTH_ADMIN_EMAIL ? 'admin' : 'user')
                     }
                 }))
             }

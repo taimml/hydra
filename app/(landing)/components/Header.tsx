@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import logo1 from "@/public/logo1.svg"
 import { Hamburger } from "@/components/icons/Hamburger";
+import Link from "next/link";
 
 export default function Header() {
     const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -27,9 +28,11 @@ export default function Header() {
                 <button className="border-2 px-6 py-2 rounded-full cursor-pointer">
                     CONTACT US
                 </button>
-                <button className="max-w-xs bg-linear-to-r py-4 px-6 from-[#8176AF] to-[#C0B7E8] text-mypurple rounded-4xl cursor-pointer">
-                    JOIN HYDRA
-                </button>
+                <Link href="/auth/sign-up">
+                    <button className="max-w-xs bg-linear-to-r py-4 px-6 from-[#8176AF] to-[#C0B7E8] text-mypurple rounded-4xl cursor-pointer">
+                        JOIN HYDRA
+                    </button>
+                </Link>
             </div>
             
 
@@ -55,9 +58,12 @@ export default function Header() {
                         <button className="w-full border-2 py-4 rounded-full text-white">
                             CONTACT US
                         </button>
-                        <button className="w-full bg-linear-to-r py-4 px-26 from-[#8176AF] to-[#C0B7E8] text-mypurple rounded-4xl cursor-pointer">
-                            JOIN HYDRA
-                        </button>
+                        <Link href="/auth/sign-up">
+                            <button className="w-full bg-linear-to-r py-4 px-26 from-[#8176AF] to-[#C0B7E8] text-mypurple rounded-4xl cursor-pointer">
+                                JOIN HYDRA
+                            </button>
+                        </Link>
+                        
                     </div>
                 </div>
             )}

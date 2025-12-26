@@ -10,8 +10,10 @@ import { Form as ShadcnForm, FormField, FormItem, FormLabel, FormControl, FormMe
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 export default function SignUp() {
+    const router = useRouter();
     const formSchema = z.object({
 		email: z.email("Некоректная почта"),
 		password: z.string().min(8, "Пароль должен быть минимум 8 символов"),
@@ -39,12 +41,15 @@ export default function SignUp() {
             {
                 onSuccess: () => {
                     alert("Sign up successful");
+                    router.push("/");
+                    
+
                 },
             },
         );
     };
     return(
-        <div className="bg-radial from-[#403A5F] to-[#211E2E] lg:rounded-[100px] rounded-4xl p-12 shadow-2xl">
+        <div className="bg-radial from-[#403A5F] to-[#211E2E] lg:rounded-[100px] rounded-4xl p-12">
             <div className="flex flex-col text-center mb-10 items-center">
                 <h2 className="lg:text-[36px] text-2xl font-bold text-white">SIGN UP</h2>
                 <Image src={vector16} alt="16" className="my-6" />
@@ -62,7 +67,7 @@ export default function SignUp() {
                             <FormControl>
                             <Input 
                                 placeholder="Name"
-                                className="w-full border-2 border-white rounded-[40px] px-8 py-5 text-white placeholder-white bg-transparent"
+                                className="w-full border-2 border-white rounded-[40px] px-8 py-5 text-white placeholder-white"
                                 {...field}
                             />
                             </FormControl>
@@ -80,7 +85,7 @@ export default function SignUp() {
                                 type="email"
                                 {...field}
                                 placeholder="Email"
-                                className="w-full border-2 border-white rounded-[40px] px-8 py-5 text-white placeholder-white bg-transparent"
+                                className="w-full border-2 border-white rounded-[40px] px-8 py-5 text-white placeholder-white"
                             />
                             </FormControl>
                             <FormMessage />
@@ -97,7 +102,7 @@ export default function SignUp() {
                                 type="password"
                                 {...field}
                                 placeholder="Password"
-                                className="w-full border-2 border-white rounded-[40px] px-8 py-5 text-white placeholder-white bg-transparent"
+                                className="w-full border-2 border-white rounded-[40px] px-8 py-5 text-white placeholder-white"
                             />
                             </FormControl>
                             <FormMessage />
@@ -114,7 +119,7 @@ export default function SignUp() {
                                         {...field}
                                         type="password"
                                         placeholder="Повторите пароль"
-                                        className="w-full border-2 border-white rounded-[40px] px-8 py-5 text-white placeholder-white bg-transparent"
+                                        className="w-full border-2 border-white rounded-[40px] px-8 py-5 text-white placeholder-white"
                                     />
                                 </FormControl>
                                 <FormMessage />

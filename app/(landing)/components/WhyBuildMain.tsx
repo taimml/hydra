@@ -1,6 +1,6 @@
-'use client'
-import { useState } from "react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, } from "@/components/ui/carousel";
+"use client"
+import { useState, useEffect } from "react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Image from "next/image";
 
 import linii42 from "@/public/linii42.svg";
@@ -12,6 +12,22 @@ import frame35 from "@/public/Frame 35.svg";
 import frame36 from "@/public/Frame 36.svg";
 
 export default function WhyBuildMain() {
+    const [whyBuildText, setWhyBuildText] = useState("");
+    
+    useEffect(() => {
+        fetch('/api/info/WHY_BUILD_TEXT')
+            .then(res => res.json())
+            .then(data => {
+                if (data.content) {
+                    setWhyBuildText(data.content);
+                }
+            })
+            .catch(error => {
+                console.error("Error loading why build text:", error);
+                setWhyBuildText("Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat nibh sed pulvinar proin gravida hendrerit lectus. Mi sit amet mauris commodo quis imperdiet massa tincidunt nunc. Viverra aliquet eget sit amet tellus. Ornare lectus sit amet est placerat in. Lectus magna fringilla urna porttitor rhoncus vitae.");
+            });
+    }, []);
+    
     const mobileCarouselItems = [
         {
             id:1,
@@ -38,6 +54,7 @@ export default function WhyBuildMain() {
             text:"Vitae sapien pellentesque habitant morbi nunc. Viverra aliquet  porttitor rhoncus libero justo laoreet sit amet vitae."
         },
     ]
+    
     return(
         <div>
             <div className="relative hidden lg:block">
@@ -55,10 +72,9 @@ export default function WhyBuildMain() {
                             <Image src={component1} alt="comp" />
                         </div>
                     </div>
-                        <p className="max-w-xl">Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat 
-                        nibh sed pulvinar proin gravida hendrerit lectus. Mi sit amet mauris commodo 
-                        quis imperdiet massa tincidunt nunc. Viverra aliquet eget sit amet tellus. Ornare 
-                        lectus sit amet est placerat in. Lectus magna fringilla urna porttitor rhoncus vitae.</p>
+                    <p className="max-w-xl">
+                        {whyBuildText || "Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat nibh sed pulvinar proin gravida hendrerit lectus. Mi sit amet mauris commodo quis imperdiet massa tincidunt nunc. Viverra aliquet eget sit amet tellus. Ornare lectus sit amet est placerat in. Lectus magna fringilla urna porttitor rhoncus vitae."}
+                    </p>
                 </div>
                 <div className="flex justify-between gap-3">
                     <div className="flex flex-col items-center bg-radial from-[#433D60] to-[#211E2E] rounded-4xl gap-7 py-6 px-6">

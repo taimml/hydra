@@ -1,6 +1,6 @@
-'use client'
-import { useState } from "react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, } from "@/components/ui/carousel";
+"use client"
+import { useState, useEffect } from "react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { SmallArrowRight } from "@/components/icons/SmallArrowRight";
 import Image from "next/image";
 
@@ -12,6 +12,22 @@ import frame62 from "@/public/Frame 62.svg";
 import frame64 from "@/public/Frame 64.svg";
 
 export default function HowWeBuildMain() {
+    const [howWeBuildText, setHowWeBuildText] = useState("");
+    
+    useEffect(() => {
+        fetch('/api/info/HOW_WE_BUILD_TEXT')
+            .then(res => res.json())
+            .then(data => {
+                if (data.content) {
+                    setHowWeBuildText(data.content);
+                }
+            })
+            .catch(error => {
+                console.error("Error loading how we build text:", error);
+                setHowWeBuildText("Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat nibh sed pulvinar proin gravida hendrerit lectus. Mi sit amet mauris commodo quis imperdiet massa tincidunt nunc. Viverra aliquet eget sit amet tellus. Ornare lectus sit amet est placerat in. Lectus magna fringilla urna porttitor rhoncus vitae.");
+            });
+    }, []);
+    
     const mobileCarouselItems = [
         {
             id:1,
@@ -34,6 +50,7 @@ export default function HowWeBuildMain() {
             text: "Hydra VR Deploy",
         },
     ]
+    
     return(
         <div>
             <div className="relative hidden lg:block">
@@ -48,10 +65,9 @@ export default function HowWeBuildMain() {
                             <Image src={component1} alt="comp" />
                         </div>
                     </div>
-                        <p className="max-w-xl">Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat 
-                        nibh sed pulvinar proin gravida hendrerit lectus. Mi sit amet mauris commodo 
-                        quis imperdiet massa tincidunt nunc. Viverra aliquet eget sit amet tellus. Ornare 
-                        lectus sit amet est placerat in. Lectus magna fringilla urna porttitor rhoncus vitae.</p>
+                    <p className="max-w-xl">
+                        {howWeBuildText || "Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat nibh sed pulvinar proin gravida hendrerit lectus. Mi sit amet mauris commodo quis imperdiet massa tincidunt nunc. Viverra aliquet eget sit amet tellus. Ornare lectus sit amet est placerat in. Lectus magna fringilla urna porttitor rhoncus vitae."}
+                    </p>
                 </div>
                 <div className="grid grid-cols-4">
                     <div className="flex flex-col items-center gap-4">

@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, } from "@/components/ui/carousel";
 import { ArrowRight } from "@/components/icons/ArrowRight";
 import { Call } from "@/components/icons/Call";
@@ -16,7 +16,23 @@ import phoneCall from "@/public/phone-call.svg";
 import mailIcon from "@/public/mail.svg";
 import { Locate } from "@/components/icons/Locate";
 
+
 export default function DiveIntoMain() {
+    const [diveText, setDiveText] = useState("");
+    useEffect(() => {
+        fetch('/api/info/DIVE_INTO_TEXT')
+            .then(res => res.json())
+            .then(data => {
+                if (data.content) {
+                    setDiveText(data.content);
+                }
+            })
+            .catch(error => {
+                console.error("Ошибка загрузки текста:", error);
+                setDiveText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore nisl tincidunt eget. Lectus mauris eros in vitae.");
+            });
+    }, []);
+
     const mobileCarouselItems = [
         {
             id:1,
@@ -50,9 +66,7 @@ export default function DiveIntoMain() {
                             <h1 className="text-[40px]">Of <span className="text-[46px] bg-linear-to-r from-[#C0B7E8] to-[#8176AF] bg-clip-text text-transparent">Virtual Reality</span></h1>
                         </div>
                         <div>
-                            <p className="font-light max-w-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore 
-                            nisl tincidunt eget. Lectus mauris eros in vitae.</p>
+                            <p className="font-light max-w-100">{diveText || "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore nisl tincidunt eget. Lectus mauris eros in vitae."}</p>
                         </div>
                         <div className="flex gap-10 items-center">
                             <button className="text-xs text-mypurple font-extrabold bg-linear-to-r from-[#8176AF] to-[#C0B7E8] py-4 px-10 rounded-4xl cursor-pointer">BUILD YOUR WORLD</button>

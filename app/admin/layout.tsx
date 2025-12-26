@@ -1,0 +1,40 @@
+import { LogOut } from "lucide-react";
+import { headers } from "next/headers";
+import Link from "next/link";
+import { redirect } from "next/navigation";
+import { auth } from "@/server/auth/auth";
+import { Toaster } from "sonner";
+
+export default async function AdminLayout({ children }: { children: React.ReactNode }) {
+    const session = await auth.api.getSession({
+        headers: await headers(),
+    });
+
+    if (session?.user.role !== "admin") {
+        redirect("/auth/login");
+    }
+
+    return (
+        <main className="flex min-h-screen bg-white">
+            <div className="w-64 bg-black text-white p-6 border-r">
+                <h1 className="text-xl font-bold mb-8">Админка</h1>
+                <div className="flex flex-col gap-2">
+                    <Link href="/admin" className="p-3">Главная</Link>
+                    <Link href="/admin/forms" className="p-3">Формы</Link>
+                    <Link href="/admin/info" className="p-3">Тексты</Link>
+                    <Link href="/admin/social" className="p-3"> Соцсети</Link>
+                </div>
+                <div className="mt-8">
+                    <Link href="/" className="flex items-center gap-2 hover:text-gray-300">
+                        <LogOut size={18} /> На сайт
+                    </Link>
+                </div>
+            </div>
+
+            <div className="flex-1 p-6">
+                {children}
+                <Toaster/>
+            </div>
+        </main>
+    );
+}

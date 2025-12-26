@@ -3,10 +3,11 @@ import { userService } from "./user";
 import { eq } from "drizzle-orm";
 import { db } from "../../db";
 import { info } from "../../db/schema";
-import z from "zod/v4";
+import z from "zod";
 
 export const infoRouter = new Elysia({ prefix: "/info" })
     .use(userService)
+    
     .get("/:section", async ({ params }) => {
         return await db.query.info.findFirst({
             where: eq(info.section, params.section),
@@ -15,7 +16,8 @@ export const infoRouter = new Elysia({ prefix: "/info" })
         params: z.object({
             section: z.string()
         })
-    } )
+    })
+    
     .put("/:section", async ({ params, body }) => {
         const existing = await db.query.info.findFirst({
             where: eq(info.section, params.section),

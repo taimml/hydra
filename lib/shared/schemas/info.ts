@@ -1,7 +1,7 @@
-import z from "zod/v4";
+import { z } from "zod";
 
-
-export const infoSchema = z.object({
-    content: z.string().min(1, "Текст не может быть пустым"),
-    type: z.enum(["text", "image"]).default("text"),
+export const socialSchema = z.object({
+    name: z.string({ message: "Название обязательно" }),
+    url: z.string({ message: "URL обязательно" }),
+    icon: z.string().optional(),
 });
