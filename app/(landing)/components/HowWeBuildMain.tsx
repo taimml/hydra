@@ -23,8 +23,8 @@ export default function HowWeBuildMain() {
                 }
             })
             .catch(error => {
-                console.error("Error loading how we build text:", error);
-                setHowWeBuildText("Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat nibh sed pulvinar proin gravida hendrerit lectus. Mi sit amet mauris commodo quis imperdiet massa tincidunt nunc. Viverra aliquet eget sit amet tellus. Ornare lectus sit amet est placerat in. Lectus magna fringilla urna porttitor rhoncus vitae.");
+                console.error("Ошибка загрузки текста:", error);
+                setHowWeBuildText("Ошибка загрузки текста.");
             });
     }, []);
     
@@ -52,7 +52,7 @@ export default function HowWeBuildMain() {
     ]
     
     return(
-        <div>
+        <section id="section">
             <div className="relative hidden lg:block">
                 <div className="absolute -z-10 top-55 ">
                     <Image src={linii5} alt="" />
@@ -66,7 +66,7 @@ export default function HowWeBuildMain() {
                         </div>
                     </div>
                     <p className="max-w-xl">
-                        {howWeBuildText || "Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat nibh sed pulvinar proin gravida hendrerit lectus. Mi sit amet mauris commodo quis imperdiet massa tincidunt nunc. Viverra aliquet eget sit amet tellus. Ornare lectus sit amet est placerat in. Lectus magna fringilla urna porttitor rhoncus vitae."}
+                        {howWeBuildText}
                     </p>
                 </div>
                 <div className="grid grid-cols-4">
@@ -122,7 +122,7 @@ export default function HowWeBuildMain() {
                     </Carousel>
                 </div>
             </div>
-        </div>
+        </section>
         
     )
 }

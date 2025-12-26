@@ -31,7 +31,7 @@ export default function TechnologiesHardwareMain() {
         
     ]
     return(
-        <div className="">
+        <section id="technologies">
             <div className="relative lg:mb-10">
                 <div className="" >
                     <Image src={women} alt="women" className="hidden lg:block"/>
@@ -68,7 +68,7 @@ export default function TechnologiesHardwareMain() {
                     <CarouselNext className="right-4" />
                 </Carousel>
             </div>
-        </div>
+        </section>
         
 
     )

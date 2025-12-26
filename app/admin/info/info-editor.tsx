@@ -105,7 +105,7 @@ export function InfoEditor({ initialTexts }: { initialTexts: TextItem[] }) {
                                     </button>
                                 </div>
                                 <div className="p-2 bg-gray-50 rounded text-sm">
-                                    {item.content || "(пусто)"}
+                                    {item.content || "-"}
                                 </div>
                             </div>
                         )}

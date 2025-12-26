@@ -10,7 +10,7 @@ export default function Header() {
     const [isMobileOpen, setIsMobileOpen] = useState(false);
 
     return (
-        <header className="flex justify-between items-center font-bold lg:px-24 px-4 mt-4">
+        <header className="flex justify-between items-center font-bold  mt-4">
             <Image src={logo1} alt="logo"/>
             <button 
                 className="lg:hidden"
@@ -19,10 +19,10 @@ export default function Header() {
                 <Hamburger/>
             </button>
             <div className="gap-8 hidden lg:flex">
-                <a href="#">ABOUT</a>
-                <a href="#">SERVICES</a>
-                <a href="#">TECHNOLOGIES</a>
-                <a href="#">HOW TO</a>
+                <a href="#about">ABOUT</a>
+                <a href="#services">SERVICES</a>
+                <a href="#technologies">TECHNOLOGIES</a>
+                <a href="#section">HOW TO</a>
             </div>
             <div className="lg:flex hidden gap-4">
                 <button className="border-2 px-6 py-2 rounded-full cursor-pointer">
@@ -48,10 +48,10 @@ export default function Header() {
                     </div>
                     
                     <div className="flex-1 flex flex-col justify-center gap-8 text-2xl font-bold">
-                        <a href="#">ABOUT</a>
-                        <a href="#">SERVICES</a>
-                        <a href="#">TECHNOLOGIES</a>
-                        <a href="#">HOW TO</a>
+                        <a href="#about">ABOUT</a>
+                        <a href="#services">SERVICES</a>
+                        <a href="#technologies">TECHNOLOGIES</a>
+                        <a href="#section">HOW TO</a>
                     </div>
                     
                     <div className="space-y-4 font-bold">

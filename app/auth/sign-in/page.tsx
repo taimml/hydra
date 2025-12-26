@@ -60,7 +60,7 @@ export default function SignIn() {
 								type="email"
 								{...field}
 								placeholder="Email"
-								className="w-full border-2 border-white rounded-[40px] px-8 py-5 text-white placeholder-white"
+								className="w-full border-2 border-white rounded-[40px] px-8 py-6 text-white placeholder-white"
 							/>
 							</FormControl>
 							<FormMessage />
@@ -73,11 +73,11 @@ export default function SignIn() {
 						render={({ field }) => (
 						<FormItem>
 							<FormControl>
-							<input
+							<Input
 								type="password"
 								{...field}
 								placeholder="Password"
-								className="w-full border-2 border-white rounded-[40px] px-8 py-5 text-white placeholder-white"
+								className="w-full border-2 border-white rounded-[40px] px-8 py-6 text-white placeholder-white"
 							/>
 							</FormControl>
 							<FormMessage />

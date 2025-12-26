@@ -66,7 +66,7 @@ export default function SignUp() {
                             <FormControl>
                             <Input 
                                 placeholder="Name"
-                                className="w-full border-2 border-white rounded-[40px] px-8 py-5 text-white placeholder-white"
+                                className="w-full border-2 border-white rounded-[40px] px-8 py-6 text-white placeholder-white"
                                 {...field}
                             />
                             </FormControl>
@@ -84,7 +84,7 @@ export default function SignUp() {
                                 type="email"
                                 {...field}
                                 placeholder="Email"
-                                className="w-full border-2 border-white rounded-[40px] px-8 py-5 text-white placeholder-white"
+                                className="w-full border-2 border-white rounded-[40px] px-8 py-6 text-white placeholder-white"
                             />
                             </FormControl>
                             <FormMessage />
@@ -101,7 +101,7 @@ export default function SignUp() {
                                 type="password"
                                 {...field}
                                 placeholder="Password"
-                                className="w-full border-2 border-white rounded-[40px] px-8 py-5 text-white placeholder-white"
+                                className="w-full border-2 border-white rounded-[40px] px-8 py-6 text-white placeholder-white"
                             />
                             </FormControl>
                             <FormMessage />
@@ -118,7 +118,7 @@ export default function SignUp() {
                                         {...field}
                                         type="password"
                                         placeholder="Повторите пароль"
-                                        className="w-full border-2 border-white rounded-[40px] px-8 py-5 text-white placeholder-white"
+                                        className="w-full border-2 border-white rounded-[40px] px-8 py-6 text-white placeholder-white"
                                     />
                                 </FormControl>
                                 <FormMessage />

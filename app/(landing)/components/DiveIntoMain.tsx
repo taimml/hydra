@@ -29,7 +29,7 @@ export default function DiveIntoMain() {
             })
             .catch(error => {
                 console.error("Ошибка загрузки текста:", error);
-                setDiveText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore nisl tincidunt eget. Lectus mauris eros in vitae.");
+                setDiveText("Ошибка загрузки текста");
             });
     }, []);
 
@@ -66,7 +66,7 @@ export default function DiveIntoMain() {
                             <h1 className="text-[40px]">Of <span className="text-[46px] bg-linear-to-r from-[#C0B7E8] to-[#8176AF] bg-clip-text text-transparent">Virtual Reality</span></h1>
                         </div>
                         <div>
-                            <p className="font-light max-w-100">{diveText || "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore nisl tincidunt eget. Lectus mauris eros in vitae."}</p>
+                            <p className="font-light max-w-100">{diveText}</p>
                         </div>
                         <div className="flex gap-10 items-center">
                             <button className="text-xs text-mypurple font-extrabold bg-linear-to-r from-[#8176AF] to-[#C0B7E8] py-4 px-10 rounded-4xl cursor-pointer">BUILD YOUR WORLD</button>
