@@ -6,11 +6,10 @@ import z from "zod/v4";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { formSchema } from "@/lib/shared/schemas/forms";
-import { Form as ShadcnForm, FormField, FormItem, FormLabel, FormControl, FormMessage} from "@/components/ui/form";
+import { Form as ShadcnForm, FormField, FormItem, FormControl, FormMessage} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { api } from "@/lib/client/api";
-import { error } from "console";
 
 type FormData = z.infer<typeof formSchema>;
 
@@ -62,9 +61,9 @@ export default function JoinHydraMain() {
         <div className="flex flex-col text-center mb-10 items-center">
             <h2 className="lg:text-[36px] text-2xl font-bold text-white">JOIN HYDRA</h2>
             <Image src={vector16} alt="16" className="my-6" />
-            <p className="lg:text-[36px] text-2xl font-light text-white hidden lg:block">Let's Build Your VR Experience</p>
-            <p className="lg:text-[36px] text-2xl font-light text-white lg:hidden">Let's Build Your VR Experience</p>
-            <p className="lg:text-[36px] text-2xl font-light text-white lg:hidden"></p>
+            <p className="lg:text-[36px] text-2xl font-light text-white hidden lg:block">Lets Build Your VR Experience</p>
+            <p className="lg:text-[36px] text-2xl font-light text-white lg:hidden">Lets Build </p>
+            <p className="lg:text-[36px] text-2xl font-light text-white lg:hidden">Your VR Experience</p>
         </div>
 
         <ShadcnForm {...form}>

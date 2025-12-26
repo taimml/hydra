@@ -1,5 +1,4 @@
 'use client'
-import { useState } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, } from "@/components/ui/carousel";
 import { ArrowDown } from "@/components/icons/ArrowDown";
 import Image from "next/image";

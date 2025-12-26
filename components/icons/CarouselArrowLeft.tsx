@@ -1,0 +1,17 @@
+type IconProps = React.SVGProps<SVGAElement>;
+
+export function CarouselArrowLeft({ className, ...props }: IconProps) {
+    return(
+        <svg width="90" height="90" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="31" cy="31" r="31" fill="#0E0E0E" fill-opacity="0.32"/>
+            <circle cx="31" cy="31" r="22" fill="url(#paint0_linear_6882_63)"/>
+            <path d="M33.1667 38.9166L25.25 31L33.1667 23.0833" stroke="#433D60" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+            <linearGradient id="paint0_linear_6882_63" x1="54.2571" y1="32.5714" x2="9" y2="34.4571" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#C0B7E8"/>
+            <stop offset="1" stop-color="#8176AF"/>
+            </linearGradient>
+            </defs>
+        </svg>
+    );
+}

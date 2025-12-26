@@ -137,7 +137,6 @@ export default function WhyBuildMain() {
                                         <Image src={item.pic} alt="" />
                                         <div className="flex flex-col items-center mb-6">
                                             <p className="text-2xl font-bold">{item.title}</p>
-                                            <div className="border border-[#C0B7E8]/30 my-6 w-full max-w-40"/>
                                             <p className="text-xs">{item.text}</p>
                                         </div>
                                         <button className="w-full text-xs font-bold py-4 rounded-4xl bg-linear-to-r from-[#8176AF] to-[#C0B7E8] text-mypurple">TRY IT NOW</button>

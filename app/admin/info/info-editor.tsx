@@ -47,10 +47,7 @@ export function InfoEditor({ initialTexts }: { initialTexts: TextItem[] }) {
             );
             setEditing(null);
             toast.success("Текст сохранен");
-        },
-        onError: (error) => {
-            toast.error("Не удалось сохранить текст");
-        },
+        }
     });
 
     const startEdit = (section: string, content: string) => {

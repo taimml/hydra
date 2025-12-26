@@ -55,7 +55,7 @@ export default function IntroductionAndAboutMain() {
                     <p className="lg:max-w-139 lg:text-[16px] text-xs">
                         {aboutText || "Eget mi proin sed libero enim sed faucibus turpis. Nisl rhoncus mattis rhoncus urna neque viverra justo. Vivamus at augue eget arcu dictum. Ultrices gravida dictum fusce ut placerat orci. Aenean et tortor at risus viverra adipiscing at in. Mattis aliquam faucibus purus in massa. Est placerat in egestas erat imperdiet sed. Consequat semper viverra nam libero justo laoreet sit amet. Aliquam etiam erat velit scelerisque in dictum non consectetur a. Laoreet sit amet cursus sit amet. Vel eros donec ac odio tempor orci dapibus. Sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum. Leo a diam sollicitudin tempor."}
                     </p>
-                    <button className="lg:text-xs text-sm text-mypurple bg-linear-to-r from-[#8176AF] to-[#C0B7E8] py-4 rounded-4xl font-bold mx-auto lg:mx-0 lg:max-w-55 max-w-3xs w-full">LET'S GET IN TOUCH</button>
+                    <button className="lg:text-xs text-sm text-mypurple bg-linear-to-r from-[#8176AF] to-[#C0B7E8] py-4 rounded-4xl font-bold mx-auto lg:mx-0 lg:max-w-55 max-w-3xs w-full">LETS GET IN TOUCH</button>
                 </div>
             </div> 
         </div>

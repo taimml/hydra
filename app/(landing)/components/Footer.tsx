@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useEffect, useState } from "react";
 
 import lini6 from "@/public/linii6.svg";
@@ -21,6 +21,9 @@ type SocialLink = {
 	name: string;
 	url: string;
 };
+
+const iconNames = ['facebook', 'twitter', 'linkedin', 'youtube', 'instagram', 'pinterest'] as const;
+type IconName = typeof iconNames[number];
 
 export default function Footer() {
 	const [socialLinks, setSocialLinks] = useState<SocialLink[]>([]);
@@ -47,7 +50,7 @@ export default function Footer() {
 		});
 	}, []);
 
-	const icons: { [key: string]: any } = {
+	const icons: Record<IconName, StaticImageData> = {
 		facebook: facebookIcon,
 		twitter: twitterIcon,
 		linkedin: linkedinIcon,
@@ -55,10 +58,19 @@ export default function Footer() {
 		instagram: instagramIcon,
 		pinterest: pinterestIcon,
 	} ;
-	const getIcon = (name: string) => {
-        const normalizedName = name.toLowerCase().trim();
-        return icons[normalizedName] || null;
-    };
+	function isIconName(name: string): name is IconName {
+		return iconNames.includes(name as IconName);
+}
+
+	const getIcon = (name: string): StaticImageData | null => {
+		const normalizedName = name.toLowerCase().trim();
+		
+		if (isIconName(normalizedName)) {
+			return icons[normalizedName];
+		}
+		
+		return null;
+	};
 
 	return (
 		<footer className="flex flex-col gap-14 relative items-center w-full px-4">

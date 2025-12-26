@@ -6,7 +6,7 @@ import z from "zod/v4";
 import { authClient } from "@/lib/client/auth-client";
 import Image from "next/image";
 import vector16 from "@/public/Vector 16.svg";
-import { Form as ShadcnForm, FormField, FormItem, FormLabel, FormControl, FormMessage} from "@/components/ui/form";
+import { Form as ShadcnForm, FormField, FormItem, FormControl, FormMessage} from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
@@ -44,9 +44,9 @@ export default function SignIn() {
 			<div className="flex flex-col text-center mb-10 items-center">
 				<h2 className="lg:text-[36px] text-2xl font-bold text-white">SIGN IN</h2>
 				<Image src={vector16} alt="16" className="my-6" />
-				<p className="lg:text-[36px] text-2xl font-light text-white hidden lg:block">Let's Build Your VR Experience</p>
-				<p className="lg:text-[36px] text-2xl font-light text-white lg:hidden">Let's Build Your VR Experience</p>
-				<p className="lg:text-[36px] text-2xl font-light text-white lg:hidden"></p>
+				<p className="lg:text-[36px] text-2xl font-light text-white hidden lg:block">Lets Build Your VR Experience</p>
+				<p className="lg:text-[36px] text-2xl font-light text-white lg:hidden">Lets Build Your </p>
+				<p className="lg:text-[36px] text-2xl font-light text-white lg:hidden">VR Experience</p>
 			</div>
 			<ShadcnForm {...form}>
 				<form onSubmit={form.handleSubmit(onFormSubmit)} className="space-y-8 text-sm">
