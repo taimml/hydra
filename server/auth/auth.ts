@@ -3,6 +3,16 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { db } from "../db";
 
 export const auth = betterAuth({
+    secret: process.env.BETTER_AUTH_SECRET!,
+
+    baseURL: process.env.NODE_ENV === "production" 
+        ? "https://nastya.orn1xx.ru/"
+        : "http://localhost:3000",
+
+    trustedOrigins: process.env.NODE_ENV === "production"
+        ? ["https://nastya.orn1xx.ru/", "https://nastya.orn1xx.ru/"]
+        : ["http://localhost:3000"],
+
     database: drizzleAdapter(db, {
         provider: "pg"
     }),

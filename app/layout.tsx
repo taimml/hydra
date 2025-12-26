@@ -23,7 +23,6 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body className={`${MontserratSans.className} antialiased`}>
-            <Header/>
             <main className="container mx-auto lg:px-24 px-4">
             <QueryClientProviderContext>{children}</QueryClientProviderContext>
             </main>
