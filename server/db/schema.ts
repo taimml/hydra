@@ -43,7 +43,6 @@ export const formStatusEnum = pgEnum("form_status", [
 
 export const forms = pgTable("forms", {
     ...commonFields,
-    // userId: varchar("user_id", { length: 255 }).references(() => user.id),
     firstName: varchar("first_name", { length: 100 }).notNull(),
     lastName: varchar("last_name", { length: 100 }).notNull(),
     email: varchar("email", { length: 100 }).notNull(),
@@ -54,17 +53,4 @@ export const forms = pgTable("forms", {
     status: formStatusEnum("status").default("PENDING"),
 
 });
-// export const formsRelations = relations(forms, ({ one }) => ({
-//     user: one(user, {
-//         fields: [forms.userId],
-//         references: [user.id]
-//     })
-// }));
-
-// export const userRelations = relations(user, ({ many }) => ({
-//     sessions: many(session),
-//     accounts: many(account),
-//     verifications: many(verification),
-//     forms: many(forms)
-// }));
 
