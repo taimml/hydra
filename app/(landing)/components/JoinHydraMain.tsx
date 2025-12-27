@@ -10,6 +10,7 @@ import { Form as ShadcnForm, FormField, FormItem, FormControl, FormMessage} from
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { api } from "@/lib/client/api";
+import { toast } from "sonner";
 
 type FormData = z.infer<typeof formSchema>;
 
@@ -21,7 +22,6 @@ export default function JoinHydraMain() {
         defaultValues: {} as z.infer<typeof formSchema>,
     });
 
-
     const submitMutation = useMutation({
         mutationFn: async (data: FormData) => {
             const result = await api.forms.post(data)
@@ -32,13 +32,13 @@ export default function JoinHydraMain() {
         },
         onSuccess: () => {
             form.reset();
-            alert("Форма успешно отправлена!");
+            toast.success("Форма успешно отправлена!");
             queryClient.invalidateQueries({ queryKey: ['forms'] });
         },
         onError: (error) => {
-            alert("чтото пошло не так")
+            toast.error("Что-то пошло не так");
         }
-        });
+    });
 
     const onSubmit = (data: FormData) => {
         submitMutation.mutate(data);
@@ -75,10 +75,10 @@ export default function JoinHydraMain() {
                 render={({ field }) => (
                 <FormItem>
                     <FormControl>
-                    <input
+                    <Input
                         {...field}
                         placeholder="First Name"
-                        className="w-full border-2 border-white rounded-[40px] px-8 py-5 text-white placeholder-white"
+                        className="w-full border-2 border-white rounded-[40px] px-8 py-7 text-white placeholder-white"
                     />
                     </FormControl>
                     <FormMessage />
@@ -92,10 +92,10 @@ export default function JoinHydraMain() {
                 render={({ field }) => (
                 <FormItem>
                     <FormControl>
-                    <input
+                    <Input
                         {...field}
                         placeholder="Last Name"
-                        className="w-full border-2 border-white rounded-[40px] px-8 py-5 text-white placeholder-white"
+                        className="w-full border-2 border-white rounded-[40px] px-8 py-7 text-white placeholder-white"
                     />
                     </FormControl>
                     <FormMessage />
@@ -111,11 +111,11 @@ export default function JoinHydraMain() {
                 render={({ field }) => (
                 <FormItem>
                     <FormControl>
-                    <input
+                    <Input
                         type="email"
                         {...field}
                         placeholder="Email"
-                        className="w-full border-2 border-white rounded-[40px] px-8 py-5 text-white placeholder-white"
+                        className="w-full border-2 border-white rounded-[40px] px-8 py-7 text-white placeholder-white"
                     />
                     </FormControl>
                     <FormMessage />
@@ -129,7 +129,7 @@ export default function JoinHydraMain() {
                 render={({ field }) => (
                 <FormItem>
                     <FormControl>
-                    <input
+                    <Input
                         type="tel"
                         {...field}
                         placeholder="Phone Number"
@@ -137,7 +137,7 @@ export default function JoinHydraMain() {
                         const formatted = formatPhone(e.target.value);
                         field.onChange(formatted);
                         }}
-                        className="w-full border-2 border-white rounded-[40px] px-8 py-5 text-white placeholder-white"
+                        className="w-full border-2 border-white rounded-[40px] px-8 py-7 text-white placeholder-white"
                     />
                     </FormControl>
                     <FormMessage />
@@ -155,7 +155,7 @@ export default function JoinHydraMain() {
                     <Input
                     {...field}
                     placeholder="Subject"
-                    className="w-full border-2 border-white rounded-[40px] px-8 py-8 text-white placeholder-white"
+                    className="w-full border-2 border-white rounded-[40px] px-8 py-7 text-white placeholder-white"
                     />
                 </FormControl>
                 <FormMessage />

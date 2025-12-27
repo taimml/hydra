@@ -3,11 +3,11 @@ import { eq } from "drizzle-orm";
 import { socialLinks } from "@/server/db/schema";
 import { db } from "@/server/db";
 import { userService } from "@/server/api/routers/user";
-import { z } from "zod";
 import { socialSchema } from "@/lib/shared/schemas/social";
+import z from "zod/v4";
 
 export const socialRouter = new Elysia({ prefix: "/social" })
-    .use(userService)
+    // .use(userService)
 
     .get("/", async () => {
         const socials = await db.query.socialLinks.findMany();
@@ -38,7 +38,7 @@ export const socialRouter = new Elysia({ prefix: "/social" })
         return { success: true, data: newSocial };
     }, {
         body: socialSchema,
-        hasRole: "admin"
+        // hasRole: "admin"
     })
 
     .delete("/:id", async ({ params }) => {
