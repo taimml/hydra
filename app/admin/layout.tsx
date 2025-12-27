@@ -59,7 +59,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
                     </Sheet>
                 </div>
 
-                <div className="flex-1 p-4 lg:p-6">
+                <div className="flex-1 p-4 lg:p-6 container mx-auto">
                     {children}
                     <Toaster />
                 </div>

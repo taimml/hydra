@@ -10,6 +10,7 @@ import { Form as ShadcnForm, FormField, FormItem, FormControl, FormMessage} from
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
+import { toast } from "sonner";
 
 export default function SignIn() {
 	const router = useRouter()
@@ -33,7 +34,7 @@ export default function SignIn() {
 			},
 			{
 				onSuccess: () => {
-					alert("Sign in successful");
+					toast.success("Вы успешно вошли")
 					router.push("/");
 				},
 			},

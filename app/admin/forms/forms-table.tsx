@@ -47,7 +47,7 @@ export function FormsTable({ initialForms }: { initialForms: Form[] }) {
         <div className="p-4 lg:p-6 text-black">
             <h1 className="text-xl lg:text-2xl font-bold mb-4 lg:mb-6">Заявки ({forms.length})</h1>
             
-            <div className="rounded-lg border lg:max-w-full max-w-2xs">
+            <div className="rounded-lg border lg:max-w-full max-w-xs mx-auto">
                 <Table>
                     <TableHeader>
                         <TableRow>

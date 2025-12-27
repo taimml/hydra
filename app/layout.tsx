@@ -23,7 +23,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${MontserratSans.className} antialiased`}>
-				<main className="container mx-auto">
+				<main className="">
 					<QueryClientProviderContext>{children}</QueryClientProviderContext>
 					<Toaster />
 				</main>
