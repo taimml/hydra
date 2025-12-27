@@ -3,7 +3,7 @@ import { userService } from "./user";
 import { eq } from "drizzle-orm";
 import { db } from "../../db";
 import { info } from "../../db/schema";
-import z from "zod";
+import z from "zod/v4";
 
 export const infoRouter = new Elysia({ prefix: "/info" })
     .use(userService)

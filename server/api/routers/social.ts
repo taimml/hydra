@@ -4,6 +4,7 @@ import { socialLinks } from "@/server/db/schema";
 import { db } from "@/server/db";
 import { userService } from "@/server/api/routers/user";
 import { z } from "zod";
+import { socialSchema } from "@/lib/shared/schemas/social";
 
 export const socialRouter = new Elysia({ prefix: "/social" })
     .use(userService)
@@ -27,7 +28,7 @@ export const socialRouter = new Elysia({ prefix: "/social" })
     }, {
         params: z.object({ id: z.string() }),
         body: z.object({ 
-            url: z.string().url()
+            url: z.string()
         }),
         hasRole: "admin"
     })
@@ -36,11 +37,7 @@ export const socialRouter = new Elysia({ prefix: "/social" })
         const newSocial = await db.insert(socialLinks).values(body).returning();
         return { success: true, data: newSocial };
     }, {
-        body: z.object({
-            name: z.string(),
-            url: z.string().url(),
-            icon: z.string().optional(),
-        }),
+        body: socialSchema,
         hasRole: "admin"
     })
 

@@ -21,7 +21,6 @@ export const info = pgTable("info", {
     ...commonFields,
     content: text("content").notNull(),
     section: varchar("section", { length: 50 }).notNull().unique(),
-    type: varchar("type", { length: 20}).default("text"),
 });
 
 export const socialLinks = pgTable("social_links", {
