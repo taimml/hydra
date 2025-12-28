@@ -14,6 +14,7 @@ import linkedinIcon from "@/public/linkedin.svg";
 import youtubeIcon from "@/public/youtube.svg";
 import instagramIcon from "@/public/instagram.svg";
 import pinterestIcon from "@/public/pinterest.svg";
+import Link from "next/link";
 
 
 type SocialLink = {
@@ -84,11 +85,10 @@ export default function Footer() {
 				<Image src={vector20} alt="" className="hidden lg:block" />
 
 				<div className="lg:flex flex-col gap-6 font-bold hidden">
-					<p>ABOUT</p>
-					<p>SERVICES</p>
-					<p>TECHNOLOGIES</p>
-					<p>HOW TO</p>
-					<p>JOIN HYDRA</p>
+					<a href="#about">ABOUT</a>
+					<a href="#services">SERVICES</a>
+					<a href="#technologies">TECHNOLOGIES</a>
+					<a href="#section">HOW TO</a>
 				</div>
 
 				<Image src={vector20} alt="" className="hidden lg:block" />
@@ -138,9 +138,10 @@ export default function Footer() {
 					)}
 				</div>
 
-					<button className="gradient-purple bg-linear-to-r from-[#8176AF] to-[#C0B7E8] text-gray-900 w-full lg:w-auto px-8 py-4 rounded-[40px] font-bold text-xs">
-						BUILD YOUR WORLD
-					</button>
+					<Link href="/auth/sign-up">
+						<button className="cursor-pointer gradient-purple bg-linear-to-r from-[#8176AF] to-[#C0B7E8] text-gray-900 w-full lg:w-auto px-8 py-4 rounded-[40px] font-bold text-xs">BUILD YOUR WORLD</button>
+					</Link>
+					
 				</div>
 			</div>
 

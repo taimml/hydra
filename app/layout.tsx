@@ -23,7 +23,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${MontserratSans.className} antialiased`}>
-				<main className="">
+				<main className="scrollbar-none">
 					<QueryClientProviderContext>{children}</QueryClientProviderContext>
 					<Toaster />
 				</main>

@@ -15,6 +15,7 @@ import locationIcon from "@/public/Location-Icon.svg";
 import phoneCall from "@/public/phone-call.svg";
 import mailIcon from "@/public/mail.svg";
 import { Locate } from "@/components/icons/Locate";
+import Link from "next/link";
 
 
 export default function DiveIntoMain() {
@@ -69,7 +70,10 @@ export default function DiveIntoMain() {
                             <p className="font-light max-w-100">{diveText}</p>
                         </div>
                         <div className="flex gap-10 items-center">
-                            <button className="text-xs text-mypurple font-extrabold bg-linear-to-r from-[#8176AF] to-[#C0B7E8] py-4 px-10 rounded-4xl cursor-pointer">BUILD YOUR WORLD</button>
+                            <Link href="/auth/sign-up">
+                                <button className="text-xs text-mypurple font-extrabold bg-linear-to-r from-[#8176AF] to-[#C0B7E8] py-4 px-10 rounded-4xl cursor-pointer">BUILD YOUR WORLD</button>
+                            </Link>
+                            
                             <ArrowRight/>
                         </div>
                         
@@ -78,7 +82,7 @@ export default function DiveIntoMain() {
                         <Image src={frame10} alt="frame" />
                     </div>
                 </div>
-                <div className="flex justify-between bg-radial from-[#3A3456] to-[#211E2E] rounded-[100px] px-16 py-10">
+                <div className="flex justify-between bg-linear-90 from-[#211E2E] via-[#3A3456] to-[#211E2E] rounded-[100px] px-16 py-10">
                     <div className="flex items-center gap-6">
                         <Locate/>
                         <div>
@@ -109,19 +113,22 @@ export default function DiveIntoMain() {
                     <Image src={moblin} alt="mob" />
                 </div>
                 <Image src={bigmob} alt="big" className="w-screen" />
-                <div className="flex flex-col">
+                <div className="flex flex-col items-center">
                     <div className="flex flex-col font-bold my-10 gap-4 text-center">
                             <h1 className="text-2xl"><span className="text-4xl bg-linear-to-r from-[#C0B7E8] to-[#8176AF] bg-clip-text text-transparent">Dive</span> Into The Depths</h1>
                             <h1 className="text-2xl">Of <span className="text-[32px] bg-linear-to-r from-[#C0B7E8] to-[#8176AF] bg-clip-text text-transparent">Virtual Reality</span></h1>
                     </div>
-                    <button className="text-sm text-mypurple font-extrabold bg-linear-to-r from-[#8176AF] to-[#C0B7E8] py-4 rounded-4xl cursor-pointer">BUILD YOUR WORLD</button>
+                    <Link href="/auth/sign-up">
+                        <button className="text-sm text-mypurple font-extrabold bg-linear-to-r from-[#8176AF] to-[#C0B7E8] py-4 px-16 rounded-4xl cursor-pointer">BUILD YOUR WORLD</button>
+                    </Link>
+                    
                 </div>
                 <div className="w-full  mt-10 ">
                     <Carousel className="w-full">
                         <CarouselContent>
                             {mobileCarouselItems.map((item) => (
                                 <CarouselItem key={item.id}>
-                                    <div className="bg-radial from-[#3A3456] to-[#211E2E] rounded-[100px] p-8 flex items-center gap-4">
+                                    <div className="bg-linear-90 from-[#211E2E] via-[#3A3456] to-[#211E2E] rounded-[100px] p-8 flex items-center gap-4">
                                         <div>
                                             <Image src={item.pic} alt="" className=""/>
                                         </div>

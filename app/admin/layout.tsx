@@ -16,7 +16,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
     }
 
     return (
-        <main className="flex min-h-screen bg-white">
+        <main className="flex min-h-screen bg-white ">
             <div className="hidden lg:block w-64 bg-black text-white p-6 border-r">
                 <h1 className="text-xl font-bold mb-8">Админка</h1>
                 <div className="flex flex-col gap-2">

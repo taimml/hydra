@@ -127,6 +127,12 @@
   }
 }
 
+.scrollbar-none {
+  scrollbar-width: none !important;
+}
 
+.scrollbar-none::-webkit-scrollbar {
+  display: none !important;
+}
 
 
